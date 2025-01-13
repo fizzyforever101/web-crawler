@@ -11,6 +11,7 @@ This project is a focused web crawler that extracts and analyzes the most freque
 - **BeautifulSoup**: For extracting visible text from HTML.
 - **collections.Counter**: For counting keyword frequencies.
 - **CSV Module**: For storing crawled data in a CSV file.
+- **Matplotlib**: For plotting crawler statistics.
 
 ---
 
@@ -43,7 +44,7 @@ Ensure you have Python installed and dependencies installed as per the "Installa
 ### Step 2: Run the Web Crawler
 Execute the crawler script to start crawling the `cc.gatech.edu` domain:
 ```bash
-python crawler.py
+scrapy runspider crawler.py
 ```
 The script will:
 1. Crawl pages under `https://cc.gatech.edu`.
