@@ -12,6 +12,7 @@ This project is a focused web crawler that extracts and analyzes the most freque
 - **collections.Counter**: For counting keyword frequencies.
 - **CSV Module**: For storing crawled data in a CSV file.
 - **Matplotlib**: For plotting crawler statistics.
+- **Natural Language Toolkit**: For identifying stopwords and word classification for the post-processing keyword analysis.
 
 ---
 
@@ -24,7 +25,7 @@ Ensure the following are installed on your system:
 ### Install Dependencies
 Run the following command to install the required Python libraries:
 ```bash
-pip3 install scrapy beautifulsoup4 matplotlib
+pip3 install scrapy beautifulsoup4 matplotlib nltk
 ```
 
 ---
@@ -32,7 +33,7 @@ pip3 install scrapy beautifulsoup4 matplotlib
 ## Project Structure
 - **`crawler.py`**: The main script containing the web crawler implementation.
 - **`crawled_pages_keywords.csv`**: The output CSV file that stores crawled URLs and their keyword frequencies.
-- **`analyze_keywords.py`**: A script for performing post-crawl keyword analysis.
+- **`keyword_post_processing.py`**: A script for performing post-crawl keyword analysis.
 
 ---
 
@@ -90,11 +91,8 @@ Example of logging output:
 
 ### Crawled Pages (CSV File)
 `crawled_pages_keywords.csv`:
-```csv
-URL,Keywords,Timestamp
-https://cc.gatech.edu,"computing:20;science:15;research:10",2025-01-13 12:00:00
-https://cc.gatech.edu/research,"ai:25;data:20;learning:15",2025-01-13 12:05:00
-```
+![image](https://github.com/user-attachments/assets/9cfe1f0c-c7a0-42d5-b710-f578305efa25)
+
 ### Crawl Ratio and Crawl Speed Plots (2000 Pages)
 ![image](https://github.com/user-attachments/assets/de78a21c-b8c5-4e8e-a0b7-1d7db2d3dce9)
 
