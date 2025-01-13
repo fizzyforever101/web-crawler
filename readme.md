@@ -76,7 +76,8 @@ The `crawler.py` script includes logging functionality to track these statistics
 - **Logging**: Logs the total pages crawled, pages per minute, and URL ratio every minute.
 
 Example of running output:
-<img width="647" alt="Screenshot 2025-01-13 at 1 33 36 PM" src="https://github.com/user-attachments/assets/5827de98-bc64-47a7-9cd9-efd8efcc8d00" />
+![image](https://github.com/user-attachments/assets/8cd59eff-d6bc-4b53-8ab3-240685d1d048)
+
 
 Example of logging output:
 ```plaintext
