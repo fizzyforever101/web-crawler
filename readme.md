@@ -85,6 +85,9 @@ Example of logging output:
 [2025-01-13 12:11:00] Pages Crawled: 60 | Speed: 10 pages/min | Crawled/Queued: 60/90
 ```
 ## Example Output
+### General Scrapy (Open Source Crawler Used) Statistics
+![image](https://github.com/user-attachments/assets/a0b882bb-e51c-47da-b4a1-877f35a4dd2c)
+
 ### Crawled Pages (CSV File)
 `crawled_pages_keywords.csv`:
 ```csv
@@ -92,22 +95,20 @@ URL,Keywords,Timestamp
 https://cc.gatech.edu,"computing:20;science:15;research:10",2025-01-13 12:00:00
 https://cc.gatech.edu/research,"ai:25;data:20;learning:15",2025-01-13 12:05:00
 ```
+### Crawl Ratio and Crawl Speed Plots (2000 Pages)
+![image](https://github.com/user-attachments/assets/de78a21c-b8c5-4e8e-a0b7-1d7db2d3dce9)
 
 ### Keyword Analysis Output
-```bash
-Top Keywords: [('ai', 25), ('computing', 20), ('data', 20), ('science', 15), ('research', 10), ('learning', 15)]
-```
+![image](https://github.com/user-attachments/assets/0235a5e2-9a0b-4ad3-9784-7a24d175e0d5)
 
 ---
 
 ## Notes
-- **Politeness Policy**: The crawler respects polite crawling practices with a delay between requests (`DOWNLOAD_DELAY=1`).
 - **Restartable**: Previously crawled URLs are skipped by checking the `crawled_pages_keywords.csv` file.
-- **Extensible**: The keyword extraction and analysis logic can be modified to include more sophisticated techniques, such as stemming or stopword removal.
 
 ---
 
 ## Lessons Learned
 1. **Scalability**: Storing data in CSV is sufficient for small-scale projects but may require a database for larger crawls.
-2. **Keyword Filtering**: More advanced techniques (e.g., NLP) could improve the quality of keyword extraction.
+2. **Keyword Filtering**: The current keyword analysis method tends to identify broad, general words that may not be meaningful in the context of the dataset. By focusing only on nouns and filtering out stopwords, it overlooks the subtleties and more specific terms that could provide valuable insights. This results in common terms like "the," "and," or "data," which appear frequently but don't contribute to a deeper understanding of the content. The analysis also doesn't account for multi-word phrases or domain-specific terms that may be more relevant. To improve the analysis, incorporating more sophisticated techniques like keyword extraction algorithms or utilizing contextual word embeddings could help identify more specific and meaningful keywords. Additionally, considering word collocations and domain-specific language would allow for a richer, more accurate analysis, capturing the true essence of the content.
 3. **Performance**: Crawling speed is influenced by server response times and the size of pages. In addition,tThe `DOWNLOAD_DELAY` setting introduces a 1-second pause between requests, which can be reduced for faster crawling, while still respecting server limits. Maintaining a custom `url_queue` for deduplication slows down the process, as Scrapy already handles URL uniqueness. Writing to CSV on every page crawl introduces I/O overhead, which can be improved by batching writes. The use of BeautifulSoup for parsing adds extra processing time, and switching to Scrapy's native selectors would speed things up. Additionally, the separate thread for logging statistics and the plotting after 2000 pages can introduce delays, and optimizing or removing these could improve performance. Adjusting these factors will likely lead to a significant increase in crawl speed.
