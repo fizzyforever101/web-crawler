@@ -1,5 +1,13 @@
+# To run this keyword analysis, edit "CSV_FILE" and use the following command in the terminal:
+# python analyze_keywords.py
+
+# Author: Sabina Sokol
+# Course: CS 4675
+# Homework: 1.2
+
 import csv
 from collections import Counter
+CSV_FILE = 'path_to_your_file.csv'
 
 def analyze_keywords(csv_file):
     total_keywords = Counter()
