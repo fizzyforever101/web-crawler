@@ -7,7 +7,7 @@
 
 import csv
 from collections import Counter
-CSV_FILE = 'path_to_your_file.csv'
+CSV_FILE = 'crawled_pages_keywords.csv'
 
 def analyze_keywords(csv_file):
     total_keywords = Counter()
