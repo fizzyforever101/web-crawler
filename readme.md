@@ -55,7 +55,7 @@ The script will:
 ### Step 3: Analyze the Keywords
 Once the crawl is complete, run the analysis script to determine the most frequent keywords:
 ```bash
-python3 analyze_keywords.py
+python3 keyword_post_processing.py
 ```
 The script will:
 1. Read the `crawled_pages_keywords.csv` file.
