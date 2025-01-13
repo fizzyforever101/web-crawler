@@ -24,7 +24,7 @@ Ensure the following are installed on your system:
 ### Install Dependencies
 Run the following command to install the required Python libraries:
 ```bash
-pip install scrapy beautifulsoup4
+pip install scrapy beautifulsoup4 matplotlib
 ```
 
 ---
