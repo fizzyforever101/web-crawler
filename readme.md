@@ -75,6 +75,9 @@ The `crawler.py` script includes logging functionality to track these statistics
 - **Page Count**: Incremented for each successfully crawled page.
 - **Logging**: Logs the total pages crawled, pages per minute, and URL ratio every minute.
 
+Example of running output:
+<img width="647" alt="Screenshot 2025-01-13 at 1 33 36 PM" src="https://github.com/user-attachments/assets/5827de98-bc64-47a7-9cd9-efd8efcc8d00" />
+
 Example of logging output:
 ```plaintext
 [2025-01-13 12:10:00] Pages Crawled: 50 | Speed: 10 pages/min | Crawled/Queued: 50/100
