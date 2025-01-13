@@ -24,7 +24,7 @@ Ensure the following are installed on your system:
 ### Install Dependencies
 Run the following command to install the required Python libraries:
 ```bash
-pip install scrapy beautifulsoup4 matplotlib
+pip3 install scrapy beautifulsoup4 matplotlib
 ```
 
 ---
@@ -44,7 +44,7 @@ Ensure you have Python installed and dependencies installed as per the "Installa
 ### Step 2: Run the Web Crawler
 Execute the crawler script to start crawling the `cc.gatech.edu` domain:
 ```bash
-scrapy runspider crawler.py
+python3 -m scrapy runspider crawler.py
 ```
 The script will:
 1. Crawl pages under `https://cc.gatech.edu`.
@@ -55,7 +55,7 @@ The script will:
 ### Step 3: Analyze the Keywords
 Once the crawl is complete, run the analysis script to determine the most frequent keywords:
 ```bash
-python analyze_keywords.py
+python3 analyze_keywords.py
 ```
 The script will:
 1. Read the `crawled_pages_keywords.csv` file.
